@@ -1,0 +1,110 @@
+{
+  "laeger": [
+    {
+      "navn": "Lone Vejlø Bækby",
+      "titel": "Speciallæge i almen medicin",
+      "billede": "media/lone-vejloe-baekby.jpg",
+      "fakta": [
+        {
+          "label": "Født",
+          "vaerdi": "1974"
+        },
+        {
+          "label": "Praktiserende",
+          "vaerdi": "siden 2011"
+        }
+      ]
+    },
+    {
+      "navn": "Rune Linderoth Christiansen",
+      "titel": "Speciallæge i almen medicin",
+      "billede": "media/rune-linderoth-christiansen.jpg",
+      "fakta": [
+        {
+          "label": "Født",
+          "vaerdi": "1976"
+        },
+        {
+          "label": "Praktiserende",
+          "vaerdi": "siden 2013"
+        }
+      ]
+    },
+    {
+      "navn": "Karian Højgaard",
+      "titel": "Uddannelseslæge",
+      "billede": "media/karian-hoejgaard.jpg",
+      "fakta": [
+        {
+          "label": "Født",
+          "vaerdi": "1987"
+        },
+        {
+          "label": "I klinikken",
+          "vaerdi": "indtil februar 2027"
+        }
+      ]
+    }
+  ],
+  "personale": [
+    {
+      "navn": "Annemette Cramer",
+      "titel": "Farmakonom",
+      "billede": "media/annemette-cramer.jpg",
+      "fakta": [
+        {
+          "label": "Ansat",
+          "vaerdi": "1. maj 2012"
+        }
+      ],
+      "tekst": "Annemette passer alle funktioner i sekretariatet og laboratoriet.",
+      "opgaver": [
+        "Blodprøvetagning",
+        "EKG",
+        "Suturfjernelse",
+        "Sårbehandling",
+        "Øreskylning",
+        "Urinundersøgelser",
+        "Vaccinationer",
+        "Rådgivning"
+      ]
+    },
+    {
+      "navn": "Sarah Emborg",
+      "titel": "Sygeplejerske",
+      "billede": "media/sarah-emborg.jpg",
+      "fakta": [
+        {
+          "label": "Ansat",
+          "vaerdi": "1. januar 2022"
+        }
+      ],
+      "tekst": "Sarah har bred erfaring fra andre lægehuse og er afløser i sekretariatet.",
+      "opgaver": [
+        "Kronikerkontroller",
+        "Astma",
+        "Diabetes",
+        "Lungefunktion",
+        "Celleskrab",
+        "P-pillekontrol",
+        "Vaccinationer og injektioner",
+        "Børnevaccinationer",
+        "Opstart af svangrejournal",
+        "Sårpleje"
+      ]
+    },
+    {
+      "navn": "Christina Øholm",
+      "titel": "Sygeplejerske",
+      "billede": "media/christina-oeholm.jpg",
+      "fakta": [
+        {
+          "label": "Ansat",
+          "vaerdi": "1. oktober 2023"
+        }
+      ],
+      "tekst": "Christina har bred erfaring som sygeplejerske på sygehus, i hjemmeplejen og på plejehjem.",
+      "note": "Du møder Christina i telefonen, i sekretariatet og til konsultation om eftermiddagen."
+    }
+  ]
+}

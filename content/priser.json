@@ -1,0 +1,76 @@
+{
+  "priser": [
+    {
+      "ydelse": "Gruppe 2: konsultation eller videokonsultation",
+      "pris": "500 kr."
+    },
+    {
+      "ydelse": "Gruppe 2: telefon- eller mailkonsultation",
+      "pris": "100 kr."
+    },
+    {
+      "ydelse": "Privat konsultation",
+      "pris": "500 kr."
+    },
+    {
+      "ydelse": "Kørekortsattest",
+      "pris": "500 kr."
+    },
+    {
+      "ydelse": "Diabetes-kørekortsattest",
+      "pris": "600 kr."
+    },
+    {
+      "ydelse": "Mulighedserklæring",
+      "pris": "600 kr."
+    },
+    {
+      "ydelse": "Varighedserklæring",
+      "pris": "600 kr."
+    },
+    {
+      "ydelse": "Sygemelding til arbejdsgiver",
+      "pris": "600 kr."
+    },
+    {
+      "ydelse": "Fritagelse eller fravær under eksamen",
+      "pris": "350 kr."
+    },
+    {
+      "ydelse": "Kortere frihåndsattest",
+      "pris": "600 kr."
+    },
+    {
+      "ydelse": "Kortere frihåndsattest, studerende",
+      "pris": "500 kr."
+    },
+    {
+      "ydelse": "Længere frihåndsattest (efter tidsforbrug)",
+      "pris": "fra 800 kr."
+    },
+    {
+      "ydelse": "Ansøgning om handicap-P-skilt",
+      "pris": "500 kr."
+    },
+    {
+      "ydelse": "Fornyelse af handicap-P-skilt",
+      "pris": "300 kr."
+    },
+    {
+      "ydelse": "Værgemålsattest / fremtidsfuldmagt",
+      "pris": "1.000 kr."
+    },
+    {
+      "ydelse": "Medical certificate",
+      "pris": "300–800 kr."
+    },
+    {
+      "ydelse": "Ansøgning om enkelttilskud",
+      "pris": "450 kr."
+    },
+    {
+      "ydelse": "Vaccination (konsultation, ekskl. vaccine)",
+      "pris": "200 kr."
+    }
+  ]
+}

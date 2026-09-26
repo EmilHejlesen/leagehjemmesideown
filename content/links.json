@@ -1,0 +1,166 @@
+{
+  "grupper": [
+    {
+      "overskrift": "Find behandler",
+      "links": [
+        {
+          "titel": "Speciallæger i Aarhus og Region Midt",
+          "url": "http://www.sundhed.dk/borger/guides/find-behandler/"
+        },
+        {
+          "titel": "Fysioterapeuter i Aarhus og Region Midt",
+          "url": "https://www.sundhed.dk/borger/guides/find-behandler/?Informationskategori=Fysioterapeut"
+        }
+      ]
+    },
+    {
+      "overskrift": "Gravid",
+      "links": [
+        {
+          "titel": "Fosterdiagnostik, Sundhedsstyrelsen",
+          "url": "https://www.sst.dk/da/udgivelser/2017/gravid-undersoegelser-af-fostret"
+        },
+        {
+          "titel": "Anbefalinger om graviditet og fødsel",
+          "url": "https://www.sst.dk/da/sundhed-og-livsstil/graviditet-og-foedsel"
+        },
+        {
+          "titel": "God kemi til din baby",
+          "url": "http://mst.dk/kemi/kemikalier/saerligt-for-borgere-om-kemikalier/tema-gravid/"
+        },
+        {
+          "titel": "Skejby: graviditet, fødsel og barsel",
+          "url": "https://www.auh.dk/patientvejledninger/kvindesygdomme-og-fodsler/graviditet-fodsel-barsel/"
+        },
+        {
+          "titel": "Graviditet og alkohol",
+          "url": "https://www.sundhed.dk/borger/patienthaandbogen/graviditet/graviditet-foedsel-barsel/levevis-i-graviditeten/graviditet-og-alkohol/"
+        }
+      ]
+    },
+    {
+      "overskrift": "Trafik og lægemidler",
+      "links": [
+        {
+          "titel": "Trafik og lægemidler",
+          "url": "https://www.sst.dk/da/rationel-farmakoterapi/maanedsbladet/2014/rationel-farmakoterapi-2,-2014/trafik_og_laegemidler",
+          "note": "Vigtigt ved kørekort"
+        },
+        {
+          "titel": "Lægeattest til kørekort",
+          "url": "https://www.borger.dk/Handlingsside?selfserviceId=3c14cbe7-1aaf-4d05-b71b-0c63b217796b"
+        },
+        {
+          "titel": "Motorattest",
+          "url": "https://www.borger.dk/vaelg-kommune-obligatorisk?actionPageId=065ca8f9-a1f5-4946-ada7-12e163f568df&selfserviceId=3c14cbe7-1aaf-4d05-b71b-0c63b217796b"
+        }
+      ]
+    },
+    {
+      "overskrift": "Sygdom og sundhed",
+      "links": [
+        {
+          "titel": "Sundhed.dk",
+          "url": "https://www.sundhed.dk/"
+        },
+        {
+          "titel": "Øvelsesvideoer mod muskel- og ledsmerter",
+          "url": "http://www.sundhed.dk/borger/patienthaandbogen/knogler-muskler-og-led/oevelsesfilm/"
+        },
+        {
+          "titel": "Netdoktor",
+          "url": "https://www.netdoktor.dk/"
+        },
+        {
+          "titel": "Lægehåndbogen",
+          "url": "https://www.sundhed.dk/sundhedsfaglig/laegehaandbogen/"
+        },
+        {
+          "titel": "Familiegrupperne (Al-Anon)",
+          "url": "http://www.al-anon.dk/",
+          "note": "For pårørende til alkoholikere"
+        },
+        {
+          "titel": "Anonyme Alkoholikere",
+          "url": "http://Anonyme-alkoholikere.dk"
+        }
+      ]
+    },
+    {
+      "overskrift": "Børn",
+      "links": [
+        {
+          "titel": "Syge børn",
+          "url": "http://www.sygeboern.dk/"
+        },
+        {
+          "titel": "ADHD-skema",
+          "url": "https://www.sst.dk/da/rationel-farmakoterapi/maanedsbladet/2016/~/media/38627B2EC2C17B76DBB5A5AA212F2E5F.ashx"
+        }
+      ]
+    },
+    {
+      "overskrift": "Vaccination",
+      "links": [
+        {
+          "titel": "Vacciner.dk",
+          "url": "https://vacciner.dk"
+        },
+        {
+          "titel": "Rejsevaccinationer, SSI",
+          "url": "http://www.ssi.dk/vaccination/rejsevaccinationer.aspx"
+        },
+        {
+          "titel": "Børnevaccinationsprogrammet",
+          "url": "http://www.ssi.dk/vaccination/boernevaccination.aspx"
+        },
+        {
+          "titel": "Sikkerrejse.dk",
+          "url": "http://sikkerrejse.dk/"
+        }
+      ]
+    },
+    {
+      "overskrift": "Sundhedsvæsenet",
+      "links": [
+        {
+          "titel": "Lægevagten",
+          "url": "http://www.laegevagten.dk/"
+        },
+        {
+          "titel": "Ventetider på sygehuse",
+          "url": "https://www.esundhed.dk/Emner/Patienter-og-sygehuse/MitSygehusvalg"
+        },
+        {
+          "titel": "Sundhedsstyrelsen",
+          "url": "https://www.sst.dk/"
+        },
+        {
+          "titel": "Rapportér en utilsigtet hændelse",
+          "url": "https://stps.dk/da/rapporter-en-utilsigtet-haendelse"
+        },
+        {
+          "titel": "Coronapas",
+          "url": "https://www.sundhed.dk/borger/min-side/corona/covidpas/"
+        }
+      ]
+    },
+    {
+      "overskrift": "Sport, region og kommune",
+      "links": [
+        {
+          "titel": "Sportnetdoc",
+          "url": "http://www.sportnetdoc.dk/"
+        },
+        {
+          "titel": "Region Midtjylland",
+          "url": "http://www.rm.dk/"
+        },
+        {
+          "titel": "Aarhus Kommune",
+          "url": "http://www.aarhus.dk/"
+        }
+      ]
+    }
+  ]
+}

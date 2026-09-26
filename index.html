@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Familielægerne Store Torv</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F2F3EF; --surface:#FFFFFF; --sunk:#E7E9E3; --ink:#18221E; --muted:#56635D; --line:#D5D9D1;
+  --green:#1E4A3C; --green-soft:#DCE8E1; --on-green:#F2F3EF; --brass:#9A7A2E; --brass-soft:#F1E7CD;
+  --alert:#8E2F24; --alert-soft:#F6DEDA;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:10px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --bg:#101613; --surface:#18201C; --sunk:#1F2924; --ink:#E6E8E2; --muted:#9BA8A1; --line:#2C3833;
+  --green:#86C2A8; --green-soft:#1D3229; --on-green:#0F1A15; --brass:#D6B461; --brass-soft:#2E2816;
+  --alert:#F0A197; --alert-soft:#3A1F1B;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#101613; --surface:#18201C; --sunk:#1F2924; --ink:#E6E8E2; --muted:#9BA8A1; --line:#2C3833;
+  --green:#86C2A8; --green-soft:#1D3229; --on-green:#0F1A15; --brass:#D6B461; --brass-soft:#2E2816;
+  --alert:#F0A197; --alert-soft:#3A1F1B;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--green);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.3rem,5.4vw,3.9rem);line-height:1.04}
+h2{font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.15}
+h3{font-size:1.3rem;line-height:1.25}
+p{margin:0}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.muted{color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+
+.alertbar{background:var(--green);color:var(--on-green);font-size:.88rem}
+.alertbar .wrap{display:flex;flex-wrap:wrap;gap:6px 24px;justify-content:space-between;padding-block:9px}
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;position:relative}
+.brand{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);line-height:1.1}
+.brand .name{font-family:var(--serif);font-size:1.35rem;font-weight:600}
+.brand .sub{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+nav.main{display:flex;gap:2px;flex-wrap:wrap}
+nav.main a{text-decoration:none;color:var(--ink);font-weight:500;font-size:.95rem;padding:8px 12px;border-radius:999px}
+nav.main a:hover{background:var(--sunk)}
+nav.main a[aria-current="page"]{background:var(--green);color:var(--on-green)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:8px 14px;font:600 .9rem var(--sans);cursor:pointer}
+@media (max-width:860px){
+  .menu-btn{display:inline-flex}
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;padding:10px 20px 18px}
+  nav.main.open{display:flex}
+  nav.main a{padding:12px 14px}
+}
+
+main{padding-block:40px 80px}
+section.page{display:grid;gap:52px}
+.page-head{display:grid;gap:14px;max-width:760px}
+.page-head p{font-size:1.12rem;color:var(--muted);max-width:62ch}
+
+/* Sub navigation */
+.subnav{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:32px;scrollbar-width:thin}
+.subnav a{flex-shrink:0;text-decoration:none;color:var(--muted);font-size:.9rem;font-weight:500;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.subnav a:hover{color:var(--ink);border-color:var(--muted)}
+.subnav a[aria-current="page"]{color:var(--green);border-color:var(--green);background:var(--green-soft)}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero .lead{font-size:1.15rem;color:var(--muted);max-width:52ch;margin-top:18px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:999px;border:1px solid var(--green);font-size:.97rem;font-family:var(--sans);cursor:pointer;background:none}
+.btn.primary{background:var(--green);color:var(--on-green)}
+.btn.ghost{color:var(--green)}
+.btn:hover{filter:brightness(1.08)}
+figure.facade{margin:0}
+figure.facade img{display:block;width:100%;aspect-ratio:577/440;object-fit:cover;border-radius:4px;box-shadow:0 1px 0 var(--line),0 24px 48px -28px rgba(20,40,30,.45)}
+figure.facade figcaption{font-size:.8rem;color:var(--muted);margin-top:10px}
+@media (max-width:860px){.hero{grid-template-columns:1fr;gap:32px}}
+
+.phone-panel{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.phone-panel>div{padding:22px;display:grid;gap:6px;align-content:start}
+.phone-panel>div+div{border-left:1px solid var(--line)}
+.phone-panel .big{font-family:var(--serif);font-size:1.85rem;line-height:1.1}
+.phone-panel .label{font-size:.76rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.phone-panel .urgent{background:var(--alert-soft)}
+.phone-panel .urgent .big{color:var(--alert)}
+.copy{justify-self:start;margin-top:6px;background:none;border:1px solid var(--line);border-radius:999px;color:var(--ink);padding:5px 12px;font:500 .82rem var(--sans);cursor:pointer}
+.copy:hover{background:var(--sunk)}
+@media (max-width:960px){.phone-panel{grid-template-columns:1fr 1fr}.phone-panel>div:nth-child(3){border-left:0}.phone-panel>div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:560px){.phone-panel{grid-template-columns:1fr}.phone-panel>div+div{border-left:0;border-top:1px solid var(--line)}}
+
+.notices{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.notices.three{grid-template-columns:repeat(3,1fr)}
+.notice{padding:20px 22px;border-radius:var(--r);background:var(--brass-soft);display:grid;gap:6px;align-content:start}
+.notice.green{background:var(--green-soft)}
+.notice.red{background:var(--alert-soft)}
+.notice h3{font-size:1.15rem}
+@media (max-width:860px){.notices,.notices.three{grid-template-columns:1fr}}
+
+.split{display:grid;grid-template-columns:280px 1fr;gap:40px}
+@media (max-width:860px){.split{grid-template-columns:1fr;gap:20px}}
+.services{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.services a{background:var(--surface);padding:22px;display:grid;gap:6px;align-content:start;text-decoration:none;color:var(--ink)}
+.services a:hover{background:var(--sunk)}
+.services .go{color:var(--green);font-weight:600;font-size:.9rem}
+@media (max-width:620px){.services{grid-template-columns:1fr}}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.schedule{width:100%;border-collapse:collapse}
+.schedule th,.schedule td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+.schedule th{font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--sunk)}
+.schedule tr:last-child td{border-bottom:0}
+.schedule td.time{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.schedule td.price{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.schedule th.price{text-align:right}
+
+.info{display:grid;border-top:1px solid var(--line)}
+.info article{display:grid;grid-template-columns:240px 1fr;gap:24px;padding-block:26px;border-bottom:1px solid var(--line)}
+.info article h3{font-size:1.25rem}
+.info article .body{display:grid;gap:10px;max-width:64ch}
+@media (max-width:720px){.info article{grid-template-columns:1fr;gap:8px}}
+
+/* People */
+.staff{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid;grid-template-rows:auto 1fr}
+.person img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;background:var(--sunk)}
+.person .pbody{padding:22px 24px 26px;display:grid;gap:12px;align-content:start}
+.person dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0;font-size:.93rem}
+.person dt{color:var(--muted)}
+.person dd{margin:0;font-variant-numeric:tabular-nums}
+.person ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.person li{font-size:.82rem;padding:3px 10px;border-radius:999px;background:var(--sunk)}
+.tag{justify-self:start;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--brass-soft);color:var(--brass)}
+@media (max-width:900px){.staff{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.staff{grid-template-columns:1fr}}
+
+.find{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+@media (max-width:860px){.find{grid-template-columns:1fr}}
+.address{font-family:var(--serif);font-size:1.8rem;line-height:1.25}
+.steps{display:grid;gap:14px;counter-reset:s;margin:0;padding:0;list-style:none}
+.steps li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);width:30px;height:30px;border-radius:50%;border:1px solid var(--green);color:var(--green);display:grid;place-items:center;font-weight:600;font-size:.85rem}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--sunk)}
+.map svg{display:block;width:100%;height:auto}
+
+.linkgroups{columns:2 360px;column-gap:28px}
+.lg{break-inside:avoid;margin-bottom:28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px}
+.lg h3{font-size:1.2rem;margin-bottom:10px}
+.lg ul{list-style:none;margin:0;padding:0;display:grid}
+.lg li{border-top:1px solid var(--line)}
+.lg li:first-child{border-top:0}
+.lg a{display:flex;justify-content:space-between;gap:14px;padding:10px 0;text-decoration:none;color:var(--ink)}
+.lg a:hover{color:var(--green)}
+.lg a span:last-child{color:var(--muted);flex-shrink:0;font-size:.88rem}
+.lg small{display:block;color:var(--muted);font-size:.84rem;margin-top:-4px;padding-bottom:10px}
+
+.prose{max-width:68ch;display:grid;gap:18px}
+.prose h3{margin-top:14px}
+.prose ul{margin:0;padding-left:20px;display:grid;gap:4px}
+.toc{position:sticky;top:100px;align-self:start;display:grid;gap:4px;font-size:.93rem}
+.toc a{color:var(--muted);text-decoration:none;padding:4px 0}
+.toc a:hover{color:var(--green)}
+@media (max-width:860px){.toc{position:static}}
+
+.dates{display:grid;gap:12px}
+.date{display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;padding:18px 22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.date .d{font-family:var(--serif);font-size:1.5rem;line-height:1.1;font-variant-numeric:tabular-nums}
+@media (max-width:560px){.date{grid-template-columns:1fr;gap:6px}}
+
+footer{border-top:1px solid var(--line);background:var(--surface)}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;padding-block:44px}
+footer h4{margin:0 0 10px;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+footer p,footer a{font-size:.93rem}
+footer .fnav{display:grid;gap:4px;align-content:start}
+footer .fnav a{color:var(--ink);text-decoration:none}
+footer .fnav a:hover{color:var(--green)}
+.legal{border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+.legal .wrap{padding-block:16px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+@media (max-width:860px){footer .wrap{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){footer .wrap{grid-template-columns:1fr}}
+
+.page{animation:in .35s ease both}
+@keyframes in{from{opacity:.001;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.page{animation:none}}
+</style>
+</head>
+<body>
+
+
+<div class="alertbar">
+  <div class="wrap">
+    <span><b>Akut hjælp i åbningstiden:</b> ring <span class="num"><span data-cms="telefon">86 20 11 99</span></span> og tast *</span>
+    <span data-cms="status">Klinikken er lukket for tilgang af nye patienter</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#forside">
+      <span class="name">Familielægerne Store Torv</span>
+      <span class="sub">Almen praksis · Aarhus C</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="main" id="mainNav" aria-label="Hovedmenu">
+      <a href="#forside" data-group="forside">Forside</a>
+      <a href="#praktisk" data-group="praktisk">Praktisk information</a>
+      <a href="#laeger" data-group="om">Om os</a>
+      <a href="#find-os" data-group="find">Find os</a>
+      <a href="#links" data-group="links">Links</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ================= FORSIDE ================= -->
+<section class="page" id="forside" data-group="forside" data-title="Forside">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Store Torv 5 · over for Domkirken</p>
+      <h1 style="margin-top:14px">Din lægepraksis midt i Aarhus</h1>
+      <p class="lead">Vi er to speciallæger i almen medicin, en uddannelseslæge, to sygeplejersker og en farmakonom. Book tid, forny medicin og skriv til os online, eller ring på hverdage.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#praktisk">Book tid og bestil medicin</a>
+        <a class="btn ghost" href="#find-os">Find klinikken</a>
+      </div>
+    </div>
+    <figure class="facade">
+      <img src="media/facade.jpg" data-cms-src="forsidebillede" alt="Den hvide facade på Store Torv 5 med Løveapoteket og Kristian F. Møller i stueetagen">
+      <figcaption>Klinikken ligger i Løveapotekets bygning på Store Torv.</figcaption>
+    </figure>
+  </div>
+
+  <div class="phone-panel">
+    <div>
+      <span class="label">Telefontid med lægen</span>
+      <span class="big num"><span data-cms="telefontid_laeger">8.00–8.30</span></span>
+      <span class="muted">Hverdage på <span data-cms="telefon">86 20 11 99</span></span>
+    </div>
+    <div>
+      <span class="label">Personalet</span>
+      <span class="big num"><span data-cms="telefontid_personale">8.30–12.00</span></span>
+      <span class="muted">Tidsbestilling på hverdage</span>
+    </div>
+    <div>
+      <span class="label">Akuttid uden aftale</span>
+      <span class="big num">Fra kl. <span data-cms="akuttid">11</span></span>
+      <span class="muted">Mød op og henvend dig ved skranken. Der er 5 minutter pr. patient.</span>
+    </div>
+    <div class="urgent">
+      <span class="label">Akut i åbningstiden</span>
+      <span class="big num"><span data-cms="telefon">86 20 11 99</span> *</span>
+      <span class="muted">Tast * når du ringer.</span>
+      <button class="copy" data-copy="86201199" data-cms-copy="telefon">Kopiér nummer</button>
+    </div>
+  </div>
+
+  <div class="notices three" id="opslag"></div>
+
+  <div class="split">
+    <div class="page-head">
+      <p class="eyebrow">Selvbetjening</p>
+      <h2>Kom hurtigt i kontakt</h2>
+      <p style="font-size:1rem">Log ind på hjemmesiden eller brug Min Læge-appen. Første gang logger du ind med MitID.</p>
+    </div>
+    <div class="services">
+      <a href="#praktisk"><h3>Bestil tid</h3><p class="muted">Online eller på telefonen. Skriv kort, hvad det drejer sig om.</p><span class="go">Se hvordan →</span></a>
+      <a href="#praktisk"><h3>Forny medicin</h3><p class="muted">Bestil via medicinlinket eller i appen. Tjek først, om recepten allerede ligger klar.</p><span class="go">Se hvordan →</span></a>
+      <a href="#praktisk"><h3>E-konsultation</h3><p class="muted">Korte lægefaglige spørgsmål. Ét emne pr. henvendelse.</p><span class="go">Se regler →</span></a>
+      <a href="#praktisk"><h3>Videokonsultation</h3><p class="muted">Tal med lægen på video i Min Læge-appen.</p><span class="go">Se hvordan →</span></a>
+    </div>
+  </div>
+
+  <div class="notices" id="opslag-bund"></div>
+</section>
+
+<!-- ================= PRAKTISK ================= -->
+<nav class="subnav" id="subnav-praktisk" aria-label="Praktisk information" hidden>
+  <a href="#praktisk">Praktisk information</a>
+  <a href="#fredagsvagt">Fredagsvagt</a>
+  <a href="#vaccinationer">Vaccinationer</a>
+  <a href="#priser">Priser</a>
+  <a href="#ferie">Ferie og fravær</a>
+  <a href="#trafik">Trafik og medicin</a>
+  <a href="#privatliv">Privatlivspolitik</a>
+  <a href="#cookies">Cookiepolitik</a>
+</nav>
+
+<section class="page" id="praktisk" data-group="praktisk" data-title="Praktisk information" hidden>
+  <div class="page-head">
+    <p class="eyebrow">Praktisk information</p>
+    <h1>Sådan kontakter du os</h1>
+    <p>Medbring altid dit sundhedskort, også til børn. Du kan også vise det i appen Sundhedskortet.</p>
+  </div>
+
+  <div class="tablewrap">
+    <table class="schedule">
+      <thead><tr><th>Hvad</th><th>Hvornår</th><th>Hvordan</th></tr></thead>
+      <tbody>
+        <tr><td>Konsultation</td><td class="time">Dagligt</td><td>Efter aftale</td></tr>
+        <tr><td>Telefontid med lægerne</td><td class="time"><span data-cms="telefontid_laeger">8.00–8.30</span></td><td>Hverdage på <span data-cms="telefon">86 20 11 99</span></td></tr>
+        <tr><td>Tidsbestilling hos personalet</td><td class="time"><span data-cms="telefontid_personale">8.30–12.00</span></td><td>Hverdage på <span data-cms="telefon">86 20 11 99</span></td></tr>
+        <tr><td>Akuttid uden aftale</td><td class="time">Fra kl. <span data-cms="akuttid">11</span></td><td>Mød op ved skranken. 5 minutter pr. patient</td></tr>
+        <tr><td>Tidsbestilling online</td><td class="time">Døgnet rundt</td><td>Log ind på hjemmesiden eller brug Min Læge-appen</td></tr>
+        <tr><td>Fredagsvagt</td><td class="time">Fredag 12–16</td><td><span data-cms="fredagsvagt">78 76 57 01</span></td></tr>
+        <tr><td>Lægevagten</td><td class="time">Efter kl. 16, weekend, helligdage</td><td><span data-cms="laegevagten">70 11 31 31</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="info">
+    <article><h3>Telefontid</h3><div class="body"><p>Lægerne træffes dagligt kl. <span data-cms="telefontid_laeger">8.00–8.30</span> på <span data-cms="telefon">86 20 11 99</span>. Lægen afgør, om din henvendelse kræver en konsultation i stedet.</p></div></article>
+    <article><h3>Akuttid</h3><div class="body"><p>Du kan møde op i akuttiden uden aftale. Akuttiden begynder kl. <span data-cms="akuttid">11</span>, og der er afsat 5 minutter til din problemstilling. Henvend dig ved skranken.</p><p>Du bliver set af den læge eller sygeplejerske, der har bedst tid.</p></div></article>
+    <article><h3>Tidsbestilling</h3><div class="body"><p>Bestil tid i Min Læge-appen eller ved at logge ind på hjemmesiden. Første gang logger du ind med MitID. Derefter kan du bruge MitID eller cpr-nummer, adgangskode og sikkerhedskode.</p><p>Du kan også ringe til personalet på hverdage kl. <span data-cms="telefontid_personale">8.30–12.00</span>. Oplys altid, hvad du henvender dig om.</p><p><b>1. graviditetsundersøgelse</b> skal altid bestilles ved at ringe til klinikken.</p></div></article>
+    <article><h3>Videokonsultation</h3><div class="body"><p>Kan din problemstilling klares over video, kan du booke en videokonsultation i appen Min Læge.</p></div></article>
+    <article><h3>Medicinbestilling</h3><div class="body"><p>Bestil medicin via medicinlinket på hjemmesiden eller i Min Læge-appen. Tjek i appen, om der allerede ligger en recept klar, før du kontakter klinikken.</p></div></article>
+    <article><h3>E-konsultation</h3><div class="body"><p>Log ind på hjemmesiden. Skriv kort og hold dig så vidt muligt til én problemstilling.</p><p>E-konsultation er kun til lægefaglige spørgsmål og ikke til fx tidsbestilling.</p></div></article>
+    <article><h3>Transskriptionsværktøj</h3><div class="body"><p>Ved nogle konsultationer bruger vi et værktøj, der skriver samtalen ned i realtid. Det giver en mere præcis journal og lader lægen fokusere på dig.</p><p>Der gemmes aldrig en komplet lydoptagelse. Lydfilerne slettes med det samme. Sig det til behandleren, hvis du ikke ønsker, at værktøjet bruges.</p><p><a href="https://www.noteless.com/da/sikkerhet" target="_blank" rel="noopener">Læs om Noteless og datasikkerhed</a></p></div></article>
+    <article><h3>Henvisninger</h3><div class="body"><p>Henvisninger udløser offentligt tilskud. Derfor skal lægen vurdere, at der er lægefaglig grund til henvisningen, og det kan vi kun gøre ved at se dig i klinikken. Vi kan afvise en henvisning, hvis der ikke er grund til den.</p><p>Vores vurdering afhænger ikke af, om du har en forsikring eller økonomi til at betale selv. <a href="https://fagp.dk/media/hfdneigx/laegen-kan.ogsaa-sige-nej.pdf" target="_blank" rel="noopener">Læs: Lægen kan også sige nej</a></p></div></article>
+    <article><h3>Sundhedsforsikring</h3><div class="body"><p>Skal din forsikring bruge en kopi af din henvisning, finder du den på <a href="https://www.sundhed.dk" target="_blank" rel="noopener">sundhed.dk</a> med MitID.</p><p>Har du brug for en henvisning, gælder de samme regler om fremmøde. Vil du eller forsikringsselskabet ikke have en vurdering i klinikken, skal selskabet selv bede om en udtalelse på attesten FP710.</p></div></article>
+    <article><h3>e-Boks</h3><div class="body"><p>Modtager du post fra det offentlige i e-Boks, får du indkaldelser fra Aarhus Universitetshospital dér og ikke med posten.</p></div></article>
+    <article><h3>Uddannelseslæger</h3><div class="body"><p>Vi deltager i videreuddannelsen af læger. Derfor har vi skiftende læger ansat et halvt til et helt år ad gangen.</p></div></article>
+  </div>
+</section>
+
+<section class="page" id="fredagsvagt" data-group="praktisk" data-title="Fredagsvagt" hidden>
+  <div class="page-head">
+    <p class="eyebrow">Fredagsvagt</p>
+    <h1>Fredag lukker vi kl. 12</h1>
+    <p>Om fredagen deler vi vagten kl. 12–16 med andre læger i midtbyen.</p>
+  </div>
+  <div class="phone-panel" style="grid-template-columns:repeat(2,1fr)">
+    <div><span class="label">Fredag kl. 12–16</span><span class="big num"><span data-cms="fredagsvagt">78 76 57 01</span></span><span class="muted">Ring til vagttelefonen og få at vide, hvilken læge der kan hjælpe dig.</span><button class="copy" data-copy="78765701" data-cms-copy="fredagsvagt">Kopiér nummer</button></div>
+    <div class="urgent"><span class="label">Efter kl. 16, weekend og helligdage</span><span class="big num"><span data-cms="laegevagten">70 11 31 31</span></span><span class="muted">Lægevagten i Region Midtjylland. Ved livsfare: ring 112.</span><button class="copy" data-copy="70113131" data-cms-copy="laegevagten">Kopiér nummer</button></div>
+  </div>
+</section>
+
+<section class="page" id="vaccinationer" data-group="praktisk" data-title="Vaccinationer" hidden>
+  <div class="page-head">
+    <p class="eyebrow">Vaccinationer</p>
+    <h1>Vaccination og rejsevacciner</h1>
+    <p>Rådgivning om og ønske om rejsevaccinationer henviser vi til rejsevaccinationscentre.</p>
+  </div>
+  <div class="notices">
+    <div class="notice"><p class="eyebrow">Sæson 2026</p><h3>Ingen influenza- og covid-vaccine hos os i år</h3><p>Se mulighederne på <a href="https://vacciner.dk" target="_blank" rel="noopener">vacciner.dk</a>.</p></div>
+    <div class="notice green"><p class="eyebrow">Pris</p><h3>200 kr. for konsultation + vaccinens pris</h3><p>Gælder hvis vaccinationen er betalingspligtig. Du betaler efter konsultationen, kontant eller med MobilePay.</p></div>
+  </div>
+  <p>Se også <a href="http://www.ssi.dk/vaccination/rejsevaccinationer.aspx" target="_blank" rel="noopener">Statens Serum Institut om rejsevaccinationer</a> og <a href="#links">vores links</a>.</p>
+</section>
+
+<section class="page" id="priser" data-group="praktisk" data-title="Priser" hidden>
+  <div class="page-head">
+    <p class="eyebrow">Priser</p>
+    <h1>Priser på attester og privatydelser</h1>
+    <p>Du betaler efter konsultationen. Vi tager imod kontanter og MobilePay.</p>
+  </div>
+  <div class="tablewrap">
+    <table class="schedule">
+      <thead><tr><th>Ydelse</th><th class="price">Pris</th></tr></thead>
+      <tbody id="pricebody"></tbody>
+    </table>
+  </div>
+  <p class="muted" style="max-width:64ch">Ansøgning om enkelttilskud er ikke dækket af sygesikringen og er derfor en privatydelse. Det koster 450 kr. at få lavet ansøgningen.</p>
+</section>
+
+<section class="page" id="ferie" data-group="praktisk" data-title="Ferie og fravær" hidden>
+  <div class="page-head">
+    <p class="eyebrow">Ferie og fravær</p>
+    <h1 data-cms="ferie.overskrift">Planlagt lukning 2026</h1>
+  </div>
+  <div class="dates" id="ferie-liste"></div>
+  <div class="notice green">
+    <p class="eyebrow">Brug for en læge i ferien?</p>
+    <h3>Ring til vagttelefonen på <span class="num"><span data-cms="ferievagt">78 76 57 00</span></span></h3>
+    <p>Du bliver henvist til en vikarlæge. I ferieperioder kan du ikke bestille medicin eller skrive til os, men tidsbestillingen virker.</p>
+  </div>
+</section>
+
+<section class="page" id="trafik" data-group="praktisk" data-title="Trafik og medicin" hidden>
+  <div class="page-head">
+    <p class="eyebrow">Trafik og medicin</p>
+    <h1>Kørekort og lægemidler</h1>
+    <p>Nogle lægemidler påvirker din evne til at køre bil. Læs Sundhedsstyrelsens vejledning, og tal med lægen, hvis du er i tvivl.</p>
+  </div>
+  <div class="services">
+    <a href="https://www.sst.dk/da/rationel-farmakoterapi/maanedsbladet/2014/rationel-farmakoterapi-2,-2014/trafik_og_laegemidler" target="_blank" rel="noopener"><h3>Trafik og lægemidler</h3><p class="muted">Sundhedsstyrelsen om medicin og bilkørsel.</p><span class="go">sst.dk ↗</span></a>
+    <a href="https://www.borger.dk/Handlingsside?selfserviceId=3c14cbe7-1aaf-4d05-b71b-0c63b217796b" target="_blank" rel="noopener"><h3>Lægeattest til kørekort</h3><p class="muted">Udfyld din del af attesten på borger.dk før besøget.</p><span class="go">borger.dk ↗</span></a>
+    <a href="https://www.borger.dk/vaelg-kommune-obligatorisk?actionPageId=065ca8f9-a1f5-4946-ada7-12e163f568df&amp;selfserviceId=3c14cbe7-1aaf-4d05-b71b-0c63b217796b" target="_blank" rel="noopener"><h3>Motorattest</h3><p class="muted">Ansøgning via din kommune.</p><span class="go">borger.dk ↗</span></a>
+    <a href="#priser"><h3>Pris på kørekortsattest</h3><p class="muted">500 kr. Diabetes-kørekortsattest 600 kr.</p><span class="go">Se alle priser →</span></a>
+  </div>
+</section>
+
+<section class="page" id="privatliv" data-group="praktisk" data-title="Privatlivspolitik" hidden>
+  <div class="page-head">
+    <p class="eyebrow">Privatlivspolitik</p>
+    <h1>Sådan behandler vi dine oplysninger</h1>
+  </div>
+  <div class="split">
+    <nav class="toc" aria-label="Indhold">
+      <a href="#privatliv" data-jump="p1">Behandling af oplysninger</a>
+      <a href="#privatliv" data-jump="p2">Typer af oplysninger</a>
+      <a href="#privatliv" data-jump="p3">Formål</a>
+      <a href="#privatliv" data-jump="p4">Videregivelse</a>
+      <a href="#privatliv" data-jump="p5">Retsgrundlag</a>
+      <a href="#privatliv" data-jump="p6">Opbevaring</a>
+      <a href="#privatliv" data-jump="p7">Dine rettigheder</a>
+    </nav>
+    <div class="prose">
+      <h3 id="p1">Behandling af oplysninger</h3>
+      <p>Familielægerne Store Torv indsamler og behandler personoplysninger i forbindelse med undersøgelse, diagnosticering og behandling af patienter, som loven kræver.</p>
+      <h3 id="p2">Typer af oplysninger</h3>
+      <p><b>Almindelige oplysninger:</b> navn, adresse, evt. e-mailadresse, telefonnummer, personnummer og køn.</p>
+      <p><b>Følsomme oplysninger:</b> helbredsoplysninger, prøvesvar, billeddiagnostik og i nogle tilfælde oplysninger om seksuelle forhold, race, etnisk oprindelse og religion.</p>
+      <h3 id="p3">Formål</h3>
+      <ul><li>Undersøgelse, diagnose og behandling</li><li>Lægeerklæringer, henvisninger og recepter</li><li>Indberetning til kvalitetsdatabaser</li><li>Afregning med regionen</li><li>Overholdelse af lovkrav, sikkerhed og håndtering af brud</li><li>Klagesager, tilsyn og tvister</li><li>Forskning</li></ul>
+      <p>Du giver oplysningerne frivilligt. Giver du dem ikke, kan det betyde, at vi ikke kan stille en diagnose eller behandle dig.</p>
+      <h3 id="p4">Videregivelse</h3>
+      <p>Oplysninger kan videregives til andre sundhedspersoner, regionale kvalitetsdatabaser, myndigheder, laboratorier og apoteker. Til forsikringsselskaber og pårørende sker det kun med dit samtykke.</p>
+      <h3 id="p5">Retsgrundlag</h3>
+      <p>Behandlingen sker efter databeskyttelsesforordningens artikel 6 og 9, sundhedsloven, autorisationsloven og særlige regler om recepter og kvalitetsindberetning.</p>
+      <p>Oplysningerne opbevares hos databehandlere som EG Datainform, BLD Data, Multimed, DAK-E, DMDD og offentlige myndigheder.</p>
+      <h3 id="p6">Opbevaring</h3>
+      <p>Journaler opbevares i mindst 10 år efter seneste notat. Perioden kan forlænges, hvis der verserer en klage eller et erstatningskrav.</p>
+      <h3 id="p7">Dine rettigheder</h3>
+      <p>Du har ret til indsigt, berigtigelse, sletning, begrænsning af behandling, dataportabilitet og til at gøre indsigelse. Du kan klage til <a href="https://www.datatilsynet.dk" target="_blank" rel="noopener">Datatilsynet</a>.</p>
+      <p>Kontakt: Familielægerne Store Torv, Store Torv 5, 8000 Aarhus C, telefon <span data-cms="telefon">86 20 11 99</span>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="cookies" data-group="praktisk" data-title="Cookiepolitik" hidden>
+  <div class="page-head">
+    <p class="eyebrow">Cookiepolitik</p>
+    <h1>Cookies på hjemmesiden</h1>
+  </div>
+  <div class="prose">
+    <h3>Hvad er en cookie?</h3>
+    <p>En cookie er en lille datafil, som sendes til din browser og gemmes der, så en hjemmeside kan genkende din computer. Hjemmesider kan kun læse cookies, de selv har gemt.</p>
+    <p>Der er to typer: permanente cookies, som gemmes i en længere periode, og sessionscookies, som forsvinder, når du lukker siden. Cookies kan ikke skade dine filer eller øge risikoen for virus.</p>
+    <h3>Hvad bruger vi cookies til?</h3>
+    <p>Vi bruger cookies, der er nødvendige for, at siden virker. Med dit samtykke bruger vi også første- og tredjepartscookies til at forbedre brugeroplevelsen, måle trafik, huske dine præferencer og til markedsføring.</p>
+    <p>Du kan altid trække dit samtykke tilbage. Læs mere hos <a href="https://erhvervsstyrelsen.dk/cookies" target="_blank" rel="noopener">Erhvervsstyrelsen</a>.</p>
+  </div>
+</section>
+
+<!-- ================= OM OS ================= -->
+<nav class="subnav" id="subnav-om" aria-label="Om os" hidden>
+  <a href="#laeger">Læger</a>
+  <a href="#personale">Personale</a>
+</nav>
+
+<section class="page" id="laeger" data-group="om" data-title="Læger" hidden>
+  <div class="page-head">
+    <p class="eyebrow">Om os · Læger</p>
+    <h1>Lægerne i klinikken</h1>
+    <p>Familielægerne Store Torv drives af to speciallæger i almen medicin. Vi uddanner også nye praktiserende læger.</p>
+  </div>
+  <div class="staff" id="laeger-liste"></div>
+</section>
+
+<section class="page" id="personale" data-group="om" data-title="Personale" hidden>
+  <div class="page-head">
+    <p class="eyebrow">Om os · Personale</p>
+    <h1>Personalet</h1>
+    <p>Personalet deltager aktivt i løbende efteruddannelse.</p>
+  </div>
+  <div class="staff" id="personale-liste"></div>
+</section>
+
+<!-- ================= FIND OS ================= -->
+<section class="page" id="find-os" data-group="find" data-title="Find os" hidden>
+  <div class="page-head">
+    <p class="eyebrow">Find os</p>
+    <h1>Store Torv 5, lige over for Domkirken</h1>
+  </div>
+  <div class="find">
+    <div style="display:grid;gap:28px">
+      <div style="display:grid;gap:8px">
+        <p class="address">Familielægerne Store Torv<br>Store Torv 5<br>8000 Aarhus C</p>
+        <p class="num">Telefon <span data-cms="telefon">86 20 11 99</span> · CVR 10405033</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+          <a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=Store+Torv+5,+8000+Aarhus+C" target="_blank" rel="noopener">Åbn i Google Maps</a>
+          <button class="btn ghost" data-copy="Store Torv 5, 8000 Aarhus C">Kopiér adresse</button>
+        </div>
+      </div>
+      <div style="display:grid;gap:14px">
+        <h3>Adgang til klinikken</h3>
+        <ol class="steps">
+          <li><span>Indgangen er døren mellem Kristian F. Møller og Løveapoteket.</span></li>
+          <li><span>Der er trin fra gaden op til opgangen.</span></li>
+          <li><span>Elevatoren kører ikke helt til klinikken. Der er 9 trin op til vores etage.</span></li>
+        </ol>
+        <div class="notice"><p><b>Ingen kørestolsadgang.</b> Har du svært ved trapper, så ring til os, så finder vi en løsning sammen.</p></div>
+      </div>
+    </div>
+    <div class="map" role="img" aria-label="Skitse af Store Torv med klinikken på nr. 5 over for Aarhus Domkirke">
+      <svg viewBox="0 0 520 420" xmlns="http://www.w3.org/2000/svg">
+        <rect width="520" height="420" fill="var(--sunk)"/>
+        <path d="M0 250 L520 210" stroke="var(--surface)" stroke-width="34" fill="none"/>
+        <path d="M150 0 L200 420" stroke="var(--surface)" stroke-width="26" fill="none"/>
+        <path d="M380 0 L360 420" stroke="var(--surface)" stroke-width="22" fill="none"/>
+        <rect x="215" y="95" width="130" height="90" rx="6" fill="var(--line)"/>
+        <text x="280" y="145" text-anchor="middle" font-family="Figtree,sans-serif" font-size="13" fill="var(--muted)">Domkirken</text>
+        <rect x="215" y="262" width="130" height="58" rx="4" fill="var(--green)"/>
+        <text x="280" y="296" text-anchor="middle" font-family="Figtree,sans-serif" font-size="13" font-weight="700" fill="var(--on-green)">Store Torv 5</text>
+        <circle cx="280" cy="252" r="7" fill="var(--brass)"/>
+        <text x="280" y="232" text-anchor="middle" font-family="Figtree,sans-serif" font-size="12" font-weight="600" fill="var(--ink)">Store Torv</text>
+      </svg>
+    </div>
+  </div>
+  <div class="notice red">
+    <p class="eyebrow">Skadestue og Lægevagt</p>
+    <h3>Skejby Sygehus, Palle Juul-Jensens Boulevard 161, indgang J3</h3>
+    <p>Ring altid til os først på <span data-cms="telefon">86 20 11 99</span> (tast * for akut). Uden for åbningstid: Lægevagten <span data-cms="laegevagten">70 11 31 31</span>. Ved livsfare: 112.</p>
+  </div>
+</section>
+
+<!-- ================= LINKS ================= -->
+<section class="page" id="links" data-group="links" data-title="Links" hidden>
+  <div class="page-head">
+    <p class="eyebrow">Links</p>
+    <h1>Nyttige links</h1>
+    <p>Pålidelige kilder om sygdom, graviditet, vaccination og sundhedsvæsenet. Alle links åbner i et nyt vindue.</p>
+  </div>
+  <div class="notice green" style="max-width:760px">
+    <p class="eyebrow">Min Læge-appen</p>
+    <h3>Hent appen i App Store eller Google Play</h3>
+    <p>Så kan du bestille tid, forny medicin og tale med din læge på video efter aftale.</p>
+  </div>
+  <div class="linkgroups" id="linkgroups"></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:grid;gap:8px;align-content:start">
+      <p style="font-family:var(--serif);font-size:1.3rem">Familielægerne Store Torv</p>
+      <p class="muted">Store Torv 5, 8000 Aarhus C</p>
+      <p class="num"><span data-cms="telefon">86 20 11 99</span></p>
+    </div>
+    <div><h4>Telefontid</h4><p class="num">Lægerne <span data-cms="telefontid_laeger">8.00–8.30</span><br>Personalet <span data-cms="telefontid_personale">8.30–12.00</span><br>Akuttid fra kl. <span data-cms="akuttid">11</span></p></div>
+    <div><h4>Akut</h4><p class="num">Tast * på <span data-cms="telefon">86 20 11 99</span><br>Fredag 12–16: <span data-cms="fredagsvagt">78 76 57 01</span><br>Lægevagten <span data-cms="laegevagten">70 11 31 31</span><br>Alarm 112</p></div>
+    <div class="fnav"><h4>Sider</h4>
+      <a href="#praktisk">Praktisk information</a><a href="#priser">Priser</a><a href="#ferie">Ferie og fravær</a><a href="#laeger">Læger</a><a href="#personale">Personale</a><a href="#find-os">Find os</a><a href="#links">Links</a>
+    </div>
+  </div>
+  <div class="legal"><div class="wrap"><span class="num">CVR 10405033</span><span><a href="#privatliv">Privatlivspolitik</a> · <a href="#cookies">Cookiepolitik</a></span></div></div>
+</footer>
+
+<script>
+// Content is edited in Pages CMS (see .pages.yml) and stored as JSON in content/.
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const host=u=>{try{return new URL(u).hostname.replace(/^www\./,'')}catch(e){return''}};
+const COLOR={gul:'',groen:' green',roed:' red'};
+const set=(id,html)=>{const el=document.getElementById(id);if(el)el.innerHTML=html};
+
+const renderNotices=list=>(list||[]).map(n=>`<div class="notice${COLOR[n.farve]||''}">${n.etiket?`<p class="eyebrow">${esc(n.etiket)}</p>`:''}<h3>${esc(n.overskrift)}</h3>${n.tekst||''}</div>`).join('');
+const renderPeople=list=>(list||[]).map(p=>`<article class="person">
+      ${p.billede?`<img src="${esc(p.billede)}" alt="Portræt af ${esc(p.navn)}" loading="lazy">`:''}
+      <div class="pbody"><h3>${esc(p.navn)}</h3>${p.titel?`<span class="tag">${esc(p.titel)}</span>`:''}
+      ${p.fakta&&p.fakta.length?`<dl>${p.fakta.map(f=>`<dt>${esc(f.label)}</dt><dd>${esc(f.vaerdi)}</dd>`).join('')}</dl>`:''}
+      ${p.tekst?`<p>${esc(p.tekst)}</p>`:''}
+      ${p.opgaver&&p.opgaver.length?`<ul>${p.opgaver.map(o=>`<li>${esc(o)}</li>`).join('')}</ul>`:''}
+      ${p.note?`<p class="muted">${esc(p.note)}</p>`:''}</div>
+    </article>`).join('');
+
+const RENDER={
+  indstillinger(S){
+    document.querySelectorAll('[data-cms]').forEach(el=>{const v=S[el.dataset.cms];if(v!=null&&v!=='')el.textContent=v});
+    document.querySelectorAll('[data-cms-copy]').forEach(el=>{const v=S[el.dataset.cmsCopy];if(v)el.dataset.copy=v.replace(/\D/g,'')});
+    document.querySelectorAll('[data-cms-src]').forEach(el=>{const v=S[el.dataset.cmsSrc];if(v)el.src=v});
+  },
+  forside(D){set('opslag',renderNotices(D.opslag));set('opslag-bund',renderNotices(D.opslag_bund))},
+  ferie(D){
+    document.querySelectorAll('[data-cms="ferie.overskrift"]').forEach(el=>{if(D.overskrift)el.textContent=D.overskrift});
+    set('ferie-liste',(D.perioder||[]).map(p=>`<div class="date"><span class="d">${esc(p.datoer)}</span><div><b>${esc(p.titel)}</b>${p.tekst?`<p class="muted">${esc(p.tekst)}</p>`:''}</div></div>`).join(''));
+  },
+  priser(D){set('pricebody',(D.priser||[]).map(p=>`<tr><td>${esc(p.ydelse)}</td><td class="price">${esc(p.pris)}</td></tr>`).join(''))},
+  personale(D){set('laeger-liste',renderPeople(D.laeger));set('personale-liste',renderPeople(D.personale))},
+  links(D){set('linkgroups',(D.grupper||[]).map(g=>`<div class="lg"><h3>${esc(g.overskrift)}</h3><ul>${(g.links||[]).map(l=>`<li><a href="${esc(l.url)}" target="_blank" rel="noopener"><span>${esc(l.titel)}</span><span>${esc(host(l.url))} ↗</span></a>${l.note?`<small>${esc(l.note)}</small>`:''}</li>`).join('')}</ul></div>`).join(''))},
+};
+Object.entries(RENDER).forEach(([name,render])=>
+  fetch(`content/${name}.json`,{cache:'no-cache'})
+    .then(r=>r.ok?r.json():Promise.reject(r.status))
+    .then(render)
+    .catch(err=>console.warn(`Kunne ikke indlæse content/${name}.json`,err)));
+
+
+const pages=[...document.querySelectorAll('section.page')];
+const subnavs={praktisk:document.getElementById('subnav-praktisk'),om:document.getElementById('subnav-om')};
+const navLinks=[...document.querySelectorAll('nav.main a')];
+const nav=document.getElementById('mainNav'),btn=document.getElementById('menuBtn');
+const ALIAS={'om-os':'laeger','praktisk-information':'praktisk','privatlivspolitik':'privatliv','cookiepolitik':'cookies','ferie-og-fravaer':'ferie','trafik-og-medicin':'trafik'};
+function show(id){
+  id=ALIAS[id]||id;
+  if(!pages.some(p=>p.id===id)) id='forside';
+  const page=document.getElementById(id), group=page.dataset.group;
+  pages.forEach(p=>p.hidden=p.id!==id);
+  Object.entries(subnavs).forEach(([g,el])=>{
+    el.hidden=g!==group;
+    el.querySelectorAll('a').forEach(a=>a.getAttribute('href')==='#'+id?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
+  });
+  navLinks.forEach(a=>a.dataset.group===group?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
+  document.title=(id==='forside'?'':page.dataset.title+' · ')+'Familielægerne Store Torv';
+  nav.classList.remove('open');btn.setAttribute('aria-expanded','false');
+  window.scrollTo({top:0});
+}
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#"]');
+  if(a&&!a.dataset.jump){e.preventDefault();const id=a.getAttribute('href').slice(1);show(id);try{history.replaceState(null,'','#'+id)}catch(_){}}
+  const j=e.target.closest('[data-jump]');
+  if(j){e.preventDefault();document.getElementById(j.dataset.jump).scrollIntoView({behavior:'smooth',block:'start'})}
+  const c=e.target.closest('[data-copy]');
+  if(c){const txt=c.dataset.copy,old=c.textContent;
+    const done=()=>{c.textContent='Kopieret';setTimeout(()=>c.textContent=old,1600)};
+    try{navigator.clipboard.writeText(txt).then(done).catch(()=>{c.textContent=txt})}catch(_){c.textContent=txt}}
+});
+btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+window.addEventListener('hashchange',()=>show(location.hash.slice(1)));
+show(location.hash.slice(1)||'forside');
+</script>
+
+</body>
+</html>

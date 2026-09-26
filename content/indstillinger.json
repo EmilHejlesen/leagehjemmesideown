@@ -1,0 +1,11 @@
+{
+  "status": "Klinikken er lukket for tilgang af nye patienter",
+  "telefon": "86 20 11 99",
+  "fredagsvagt": "78 76 57 01",
+  "laegevagten": "70 11 31 31",
+  "ferievagt": "78 76 57 00",
+  "telefontid_laeger": "8.00–8.30",
+  "telefontid_personale": "8.30–12.00",
+  "akuttid": "11",
+  "forsidebillede": "media/facade.jpg"
+}

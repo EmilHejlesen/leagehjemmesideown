@@ -1,0 +1,36 @@
+{
+  "opslag": [
+    {
+      "etiket": "Vacciner 2026",
+      "overskrift": "Vi vaccinerer ikke mod influenza og covid",
+      "farve": "gul",
+      "tekst": "<p>Find et vaccinationssted på <a href=\"https://vacciner.dk\" target=\"_blank\" rel=\"noopener\">vacciner.dk</a>.</p>"
+    },
+    {
+      "etiket": "Fredag efter kl. 12",
+      "overskrift": "Fredagsvagt: 78 76 57 01",
+      "farve": "groen",
+      "tekst": "<p>Vi deler vagten kl. 12–16 med andre læger i midtbyen. <a href=\"#fredagsvagt\">Læs mere</a></p>"
+    },
+    {
+      "etiket": "Aften, weekend og helligdage",
+      "overskrift": "Lægevagten: 70 11 31 31",
+      "farve": "roed",
+      "tekst": "<p>Ved større skader og livstruende sygdom: ring <strong>112</strong>.</p>"
+    }
+  ],
+  "opslag_bund": [
+    {
+      "etiket": "Graviditet",
+      "overskrift": "Ring altid for at bestille 1. graviditetsundersøgelse",
+      "farve": "groen",
+      "tekst": "<p>Denne tid kan ikke bookes online.</p>"
+    },
+    {
+      "etiket": "Skadestuebesøg",
+      "overskrift": "Kontakt altid os først på 86 20 11 99",
+      "farve": "gul",
+      "tekst": "<p>Skadestuen og Lægevagten ligger på Skejby Sygehus, Palle Juul-Jensens Boulevard 161, indgang J3.</p>"
+    }
+  ]
+}

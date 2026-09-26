@@ -1,11 +1,248 @@
-media: media
+media:
+  input: media
+  output: media
+
 content:
-  - name: pages
-    label: Pages
-    type: collection
-    path: docs
+  - name: indstillinger
+    label: Telefon og åbningstider
+    type: file
+    path: content/indstillinger.json
     fields:
-      - name: title
+      - name: status
+        label: Besked i topbjælken
         type: string
-      - name: body
-        type: rich-text
+      - name: telefon
+        label: Klinikkens telefonnummer
+        type: string
+      - name: fredagsvagt
+        label: Fredagsvagt (fredag 12–16)
+        type: string
+      - name: laegevagten
+        label: Lægevagten
+        type: string
+      - name: ferievagt
+        label: Vagttelefon i ferier
+        type: string
+      - name: telefontid_laeger
+        label: Telefontid med lægerne
+        description: F.eks. 8.00–8.30
+        type: string
+      - name: telefontid_personale
+        label: Telefontid med personalet
+        description: F.eks. 8.30–12.00
+        type: string
+      - name: akuttid
+        label: Akuttid starter kl.
+        description: Kun klokkeslættet, f.eks. 11
+        type: string
+      - name: forsidebillede
+        label: Billede på forsiden
+        type: image
+
+  - name: forside
+    label: Forside (opslag)
+    type: file
+    path: content/forside.json
+    fields:
+      - name: opslag
+        label: Opslag øverst
+        type: object
+        list: true
+        fields:
+          - name: etiket
+            label: Lille overskrift
+            type: string
+          - name: overskrift
+            label: Overskrift
+            type: string
+          - name: tekst
+            label: Tekst
+            type: rich-text
+            options:
+              format: html
+          - name: farve
+            label: Farve
+            type: select
+            options:
+              values:
+                - value: gul
+                  label: Gul (info)
+                - value: groen
+                  label: Grøn
+                - value: roed
+                  label: Rød (akut)
+      - name: opslag_bund
+        label: Opslag nederst
+        type: object
+        list: true
+        fields:
+          - name: etiket
+            label: Lille overskrift
+            type: string
+          - name: overskrift
+            label: Overskrift
+            type: string
+          - name: tekst
+            label: Tekst
+            type: rich-text
+            options:
+              format: html
+          - name: farve
+            label: Farve
+            type: select
+            options:
+              values:
+                - value: gul
+                  label: Gul (info)
+                - value: groen
+                  label: Grøn
+                - value: roed
+                  label: Rød (akut)
+
+  - name: ferie
+    label: Ferie og fravær
+    type: file
+    path: content/ferie.json
+    fields:
+      - name: overskrift
+        label: Overskrift
+        type: string
+      - name: perioder
+        label: Lukkeperioder
+        type: object
+        list: true
+        fields:
+          - name: datoer
+            label: Datoer
+            description: F.eks. 24/12 – 3/1
+            type: string
+          - name: titel
+            label: Titel
+            type: string
+          - name: tekst
+            label: Beskrivelse
+            type: string
+
+  - name: priser
+    label: Priser
+    type: file
+    path: content/priser.json
+    fields:
+      - name: priser
+        label: Priser
+        type: object
+        list: true
+        fields:
+          - name: ydelse
+            label: Ydelse
+            type: string
+          - name: pris
+            label: Pris
+            description: F.eks. 500 kr.
+            type: string
+
+  - name: personale
+    label: Læger og personale
+    type: file
+    path: content/personale.json
+    fields:
+      - name: laeger
+        label: Læger
+        type: object
+        list: true
+        fields:
+          - name: navn
+            label: Navn
+            type: string
+          - name: titel
+            label: Titel
+            type: string
+          - name: billede
+            label: Portræt
+            type: image
+          - name: fakta
+            label: Fakta
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: Label
+                description: F.eks. Født eller Ansat
+                type: string
+              - name: vaerdi
+                label: Værdi
+                type: string
+          - name: tekst
+            label: Beskrivelse
+            type: text
+          - name: opgaver
+            label: Opgaver
+            type: string
+            list: true
+          - name: note
+            label: Note (vises nedtonet)
+            type: text
+      - name: personale
+        label: Personale
+        type: object
+        list: true
+        fields:
+          - name: navn
+            label: Navn
+            type: string
+          - name: titel
+            label: Titel
+            type: string
+          - name: billede
+            label: Portræt
+            type: image
+          - name: fakta
+            label: Fakta
+            type: object
+            list: true
+            fields:
+              - name: label
+                label: Label
+                description: F.eks. Født eller Ansat
+                type: string
+              - name: vaerdi
+                label: Værdi
+                type: string
+          - name: tekst
+            label: Beskrivelse
+            type: text
+          - name: opgaver
+            label: Opgaver
+            type: string
+            list: true
+          - name: note
+            label: Note (vises nedtonet)
+            type: text
+
+  - name: links
+    label: Links
+    type: file
+    path: content/links.json
+    fields:
+      - name: grupper
+        label: Grupper
+        type: object
+        list: true
+        fields:
+          - name: overskrift
+            label: Overskrift
+            type: string
+          - name: links
+            label: Links
+            type: object
+            list: true
+            fields:
+              - name: titel
+                label: Titel
+                type: string
+              - name: url
+                label: Adresse (URL)
+                type: string
+              - name: note
+                label: Note
+                type: string
