@@ -3,7 +3,7 @@
     {
       "navn": "Lone Vejlø Bækby",
       "titel": "Speciallæge i almen medicin",
-      "billede": "media/lone-vejloe-baekby.jpg",
+      "billede": "media/person.jpg",
       "fakta": [
         {
           "label": "Født",
@@ -18,7 +18,7 @@
     {
       "navn": "Rune Linderoth Christiansen",
       "titel": "Speciallæge i almen medicin",
-      "billede": "media/rune-linderoth-christiansen.jpg",
+      "billede": "media/person.jpg",
       "fakta": [
         {
           "label": "Født",
@@ -33,7 +33,7 @@
     {
       "navn": "Karian Højgaard",
       "titel": "Uddannelseslæge",
-      "billede": "media/karian-hoejgaard.jpg",
+      "billede": "media/person.jpg",
       "fakta": [
         {
           "label": "Født",
@@ -50,7 +50,7 @@
     {
       "navn": "Annemette Cramer",
       "titel": "Farmakonom",
-      "billede": "media/annemette-cramer.jpg",
+      "billede": "media/person.jpg",
       "fakta": [
         {
           "label": "Ansat",
@@ -72,7 +72,7 @@
     {
       "navn": "Sarah Emborg",
       "titel": "Sygeplejerske",
-      "billede": "media/sarah-emborg.jpg",
+      "billede": "media/person.jpg",
       "fakta": [
         {
           "label": "Ansat",
@@ -96,7 +96,7 @@
     {
       "navn": "Christina Øholm",
       "titel": "Sygeplejerske",
-      "billede": "media/christina-oeholm.jpg",
+      "billede": "media/person.jpg",
       "fakta": [
         {
           "label": "Ansat",
